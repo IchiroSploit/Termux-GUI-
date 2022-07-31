@@ -1,0 +1,35 @@
+Termux GUI
+
+Download themes
+
+https://www.pling.com/p/1099856/
+
+Download icons 
+
+https://www.pling.com/p/1279924/
+
+pkg update -y && pkg upgrade
+pkg install x11-repo
+pkg install tigervnc xfce4* otter-browser
+mkdir .themes
+mkdir .icons
+#Copy file path
+cp -r /storage/emulated/0/Download/Ant-shell-v40.tar.xz $HOME/.themes
+cp -r /storage/emulated/0/Download/Tela-blue.tar.xz $HOME/.icons
+cd .themes
+ls
+tar -xf (themes name)
+cd ..
+cd .icons
+ls
+tar -xf (icons name)
+cd ..
+vncserver
+#set password vnc server
+#choose n
+nano .vnc/xstartup
+#add " startxfce4 & " kat line yang paling bawah sekali & save
+#CTRL + x save file
+vncserver -kill :1
+vncserver -geometry 1920x1080
+#open vnc viewer
